@@ -1,7 +1,6 @@
 var local = {};
-
 var remote = {};
-var SESSIONID = generateUUID();
+
 var accessToken = "9be02fefb0f34c95ac896fe92c0614ca";
 var baseUrl = "https://api.api.ai/v1/";
 
