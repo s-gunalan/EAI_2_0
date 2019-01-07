@@ -148,8 +148,7 @@ function queryBot(text) {
         },
         data: JSON.stringify({
             query: text,
-            lang: "en",
-            sessionId: SESSIONID
+            lang: "en"
         }),
 
         success: function(data) {
