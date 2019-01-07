@@ -1,7 +1,7 @@
 var local = {};
 var remote = {};
 
-var accessToken = "9be02fefb0f34c95ac896fe92c0614ca";
+var accessToken = "5e156e4132be4615b948184ce2a56a89";
 var baseUrl = "https://api.api.ai/v1/";
 
 function formatTime(date) {
