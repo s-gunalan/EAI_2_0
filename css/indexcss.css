@@ -1,11 +1,11 @@
 body{
 font-family: "Trebuchet MS";
 font-size:15px;
-background:url('https://lh3.googleusercontent.com/9h6vZcjigz_E6Zh1Hbjpr6NTrsKg5_UX-Pr0nKi2K029nCjIXnVsjFJ3pUk_7isGY76-Cbsmiw=w640-h400-e365');
+background:url('images/darkSpace.jpg');
 color:white;
 background-repeat: repeat;
 background-size:cover;
-//background-position: 0 -10vw;
+background-position: -10vw;
 overflow:hidden; 
 }
 small {
@@ -30,61 +30,71 @@ color:white;
     float:right;padding-left:10px;
 }
 .macro{
-    margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;
+    margin-top:5px;width:85%;border-radius:5px;padding:7.5px;display:flex;
 }
 .msj-rta{
     float:right;background:#001111;text-align:right;
+	box-shadow: inset 0 4px 4px 0 grey, 0 1px 2px 0 grey;	
 }
 .msj{
     float:left;background:#101010;
+	box-shadow: inset 0px 4px 4px 0 grey, 0 1px 2px 0 grey;	
 }
 
 .title{
 font-size:3vh;
-background: linear-gradient(black,#366C83);
+font-family: "CASTELLAR";
+margin-top: 42vh;
+margin-left: 30vw;
+width: 20%;
 text-align:center;
 
 }
+#tagline{
+ font-family:"Century Gothic";
+ font-size:1.7vh;
+}
 .frame{
     z-index:10000;
-    background:#000000;
+    background:transparent;
     overflow:hidden;
     padding:0;
     position:fixed;
     right:60px;
     bottom:70px;
     font-size:15px;
-    width:150px;
+    width:170px;
     border-color: black;
-    border-style: solid;
-    border-width: 2px 2px 2px 2px;
-    border-radius: 10px 10px 10px 10px;
-    border-style:5px solid ;
-
-    
+    border-radius: 10px 10px 10px 10px;  
+box-shadow: inset 0 5px 10px 0 grey, 0 1px 2px 0 white;	
 }
 
 .panel-primary {
-    background:#000000;
-    height: 40px;
+    background:transparent;
+    height: 50px;
 }
 .panel-heading{
     cursor: pointer;
-    padding:10px;
-    background:#000000;
+    background-color:transparent;
+	border-color:black;
     text-align: center;
 }
-.panel-primary>.panel-heading {
-    color: #fff;
-    background-color: #000000;
-    border-color: #000000;
+.panel-primary>.panel-heading{
+background-color:transparent;
+border-color:transparent;
 }
 
+.panel{
+margin-bottom:0px;
+}
+.mytext,#rec{
+    border:0;padding:10px;background:transparent;text-align:right;
+}
 
 .innerframe{
 margin-top:20px;
 z-index:1;
-background:#000000;
+background:transparent;
     height:450px;
     opacity:'0';
 }
@@ -104,7 +114,7 @@ display:flex;
     bottom:50px;
     display:flex;
     flex-direction: column;
-    overflow-y:scroll;
+    overflow-y:overlay;
     height: 370px;
 
 }
@@ -131,6 +141,27 @@ display:flex;
     border-width: 13px 13px 0 0;
     border-color: transparent transparent transparent transparent;           
 }  
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
 input:focus{
     outline: none;
 }        
