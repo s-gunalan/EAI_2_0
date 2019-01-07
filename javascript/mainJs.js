@@ -1,8 +1,12 @@
 var local = {};
-var remote = {};
 
+var remote = {};
+var SESSIONID = generateUUID();
 var accessToken = "5e156e4132be4615b948184ce2a56a89";
+
 var baseUrl = "https://api.api.ai/v1/";
+var Opurl = "https://nwave-output-v1.herokuapp.com/getop/";
+var url = Opurl + SESSIONID;
 
 function formatTime(date) {
     var hours = date.getHours();
@@ -66,7 +70,7 @@ function insertChat(who, text) {
             '<p>' + text + '</p>' +
             '<p><small>' + date + '</small></p>' +
             '</div>' +
-            '</li><br>';
+            '</li>';
     }
     else if (who =="others") {
         control = '<li style="width:100%;align:right;">' +
@@ -76,7 +80,7 @@ function insertChat(who, text) {
             '<p><small>' + date + '</small></p>' +
             '</div>' +
             '</div>' +
-            '</li><br>';
+            '</li>';
     }
     else {
         control = '<li style="width:100%;align:right;">' +
@@ -86,7 +90,7 @@ function insertChat(who, text) {
             '<p><small>' + date + '</small></p>' +
             '</div>' +
             '</div>' +
-            '</li><br>';
+            '</li>';
     }
     $("#messages").append(control);
     var objDiv = document.getElementById("messages");
@@ -101,7 +105,7 @@ $("#chat-panel").on('click', function() {
         op = "0.1";
 
     } else {
-        framewidth = "400";
+        framewidth = "370";
         op = "1";
 
     }
@@ -148,11 +152,11 @@ function queryBot(text) {
         },
         data: JSON.stringify({
             query: text,
-            lang: "en"
+            lang: "en",
+            sessionId: SESSIONID
         }),
 
         success: function(data) {
-            displayOutput(data.result.fulfillment.displayText);
             insertChat("remote", data.result.fulfillment.speech);
             var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
             window.speechSynthesis.speak(msg);
@@ -163,30 +167,15 @@ function queryBot(text) {
     });
 }
 
-$(document).ready(function() {
-    $("#myHref").click(function(event) {
-        document.getElementById("myData").setAttribute('data', url);
-        //document.getElementById("myData").setAttribute('data','file:///D:/Guna/POCs/ML/nwave-UI/output.html');
-        $("#myData").show();
-        $("#myHref").hide();
-        $("#closeOp").show();
-        return false;
-    });
-});
-$("#closeOp").click(function() {
-    $("#loading").hide();
-    document.getElementById("myData").setAttribute('data', "");
-    $("#closeOp").hide();
-    $("#myData").hide();
-    $("#myHref").show();
-});
 
-function displayOutput(input) {
-    if (input === 'LOAD-PAGE') {
-        document.getElementById("myData").setAttribute('data', url);
-        //document.getElementById("myData").setAttribute('data','https://nwave-ideabot-flask-webhook-p.herokuapp.com/getop/TESTINPUT1');
-        $("#myData").show();
-        $("#myHref").hide();
-        $("#closeOp").show();
+function generateUUID() { // Public Domain/MIT
+    var d = new Date().getTime();
+    if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
+        d += performance.now(); //use high-precision timer if available
     }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
 }
