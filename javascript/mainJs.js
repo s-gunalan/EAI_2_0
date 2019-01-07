@@ -101,11 +101,11 @@ $("#chat-panel").on('click', function() {
     var framewidth = $("#frame").width();
     var op = "";
     if (framewidth > 200) {
-        framewidth = "150";
+        framewidth = "130";
         op = "0.1";
 
     } else {
-        framewidth = "370";
+        framewidth = "350";
         op = "1";
 
     }
