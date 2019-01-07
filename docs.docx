@@ -1,0 +1,87 @@
+Infinity Portal EAI
+
+	JARVIS 2.0
+Chat Assistant to perform all activities in the portal
+Portal initiation and validation of MID and/or passcode(if any)
+Three modes :
+1.	Boss Mode- Admin / Create, Edit, Delete existing apps
+2.	User Mode- View/Use apps
+3.	SME Mode- View/Use apps with specific additional functionalities
+
+	Black Mirror
+Webpage viewer to show all apps, feed, events or alerts
+APPS
+	Primer
+Accelerators- links, or entire apps
+For ex: Mule Assistant
+Roles
+USER – View
+BOSS – Create/Edit/View/Delete
+SME – View
+
+
+	Matrix
+Repository- links to
+o	Templates
+o	Training Materials
+o	Best practices
+o	Architecture documents
+o	Case Study
+Repositories are specific to Product/technologies
+Roles
+USER – View
+BOSS – Create/Edit/View/Delete
+SME – View
+
+	Pi
+Dashboard/Analytics
+For ex: Survey dashboard
+Roles
+USER – View
+BOSS – Edit/View/Delete
+SME – View
+
+
+	The Prestige
+POCs/Demos- Links or Direct demo
+Embed videos of demos if possible
+Roles
+USER – View
+BOSS – Create/Edit/View/Delete
+SME – View
+
+TECHNICAL SPECIFICATIONS
+SYSTEM OF RECORDS 
+Salesforce:
+-	Survey Results
+For ex: Survey001
+-	Quiz Results
+For ex: Quiz001
+-	Master Data
+For ex: Technologies/Cross skilled details
+-	Analytics Data
+AI/NLP – Dialogflow
+-	USERmode
+-	Technology/Practice/Project details
+-	Quiz/Survey number
+-	BOSSmode
+-	SMEmode
+API – Mulesoft
+-	SFDC System API
+-	DF System API(optional)
+-	ML/Python hosted in Heroku
+Sharepoint links
+
+
+USER INTERFACE
+Mulesoft Experience API to host custom UI
+UI:
+-	HTML
+-	CSS – bootstrap
+-	JS – Ajax/ jQuery/ Angular*
+
+JARVIS – AJAX Call to Dialogflow (Query)
+
+
+
+
