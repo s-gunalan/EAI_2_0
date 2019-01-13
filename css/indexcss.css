@@ -31,7 +31,7 @@ font-size:15px;
 height:10vh;
 text-align:left;
 font-family:'headlineItalic';
-background: linear-gradient(#9932CC,black,transparent);	
+background: linear-gradient(black,black,transparent);	
 }
 #tagline{
 font-family:'tagline';
