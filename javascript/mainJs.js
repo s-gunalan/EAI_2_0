@@ -5,7 +5,9 @@ var SESSIONID = generateUUID();
 var accessToken = "5e156e4132be4615b948184ce2a56a89";
 
 var baseUrl = "https://api.api.ai/v1/";
-var url = "black-mirror.html";
+var apihost = "";
+var basepath = "home";
+var url = apihost + basepath;
 
 function formatTime(date) {
     var hours = date.getHours();
@@ -181,6 +183,10 @@ function queryBot(text) {
         }),
 
         success: function(data) {
+			basepath=data.result.action;
+			url = apihost + basepath;
+			$('#calendar').attr('src', url);
+			document.getElementById('black-mirror-frame').src = url;
             insertChat("remote", data.result.fulfillment.speech);
             var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
             window.speechSynthesis.speak(msg);
