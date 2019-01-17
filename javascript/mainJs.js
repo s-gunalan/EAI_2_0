@@ -5,8 +5,7 @@ var SESSIONID = generateUUID();
 var accessToken = "5e156e4132be4615b948184ce2a56a89";
 
 var baseUrl = "https://api.api.ai/v1/";
-var Opurl = "https://nwave-output-v1.herokuapp.com/getop/";
-var url = Opurl + SESSIONID;
+var url = "black-mirror.html";
 
 function formatTime(date) {
     var hours = date.getHours();
@@ -19,7 +18,24 @@ function formatTime(date) {
     return strTime;
 }
 
-   
+$(document).ready(function(){
+    $("#myHref").click(function(event){
+document.getElementById("myData").setAttribute('data',url);
+//document.getElementById("myData").setAttribute('data','file:///D:/Guna/POCs/ML/nwave-UI/output.html');
+	$("#myData").show();
+	$("#myHref").hide();
+	$("#closeOp").show();
+	return false;
+    });
+});   
+$("#closeOp").click(function(){
+	$("#loading").hide();
+	document.getElementById("myData").setAttribute('data',"");
+	$("#closeOp").hide();	
+	$("#myData").hide();
+	$("#myHref").show();
+});
+
     var recognition;
     function startRecognition() {
         recognition = new webkitSpeechRecognition();
@@ -100,22 +116,30 @@ function insertChat(who, text) {
 $("#chat-panel").on('click', function() {
     var framewidth = $("#frame").width();
     var op = "";
-    if (framewidth > 200) {
-        framewidth = "130";
+	if (framewidth > 200) {
+        framewidth = "100";
         op = "0.1";
-
+	$(".frame").css('border-radius','100px');
+	$(".panel-heading").css('height','100px');
+	$(".panel-heading").contents().remove();
+    
     } else {
         framewidth = "350";
         op = "1";
-
-    }
+	
+	$(".panel-heading").css('height','50px');
+	
+	$(".panel-heading").text('JARVIS');
+    $(".frame").css('border-radius','0px');
+	}
     $(".innerframe").animate({
         height: 'toggle',
-        opacity: op
+        opacity: op,
+	
     });
     $('#frame').animate({
         width: framewidth,
-        background: "black"
+        background: "transparent"
     });
 });
 
@@ -179,3 +203,19 @@ function generateUUID() { // Public Domain/MIT
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
 }
+$(function () {
+    var body = $('#logos');
+    var backgrounds = ['url(css/logos/Mulesoft.png)','url(css/logos/Apigee.png)','url(css/logos/Software AG.png)','url(css/logos/IBM.png)',
+'url(css/logos/Biztalk.png)','url(css/logos/Tibco.png)',];
+    var current = 0;
+
+    function nextBackground() {
+        body.css(
+            'background',
+        backgrounds[current = ++current % backgrounds.length]);
+
+        setTimeout(nextBackground, 1500);
+    }
+    setTimeout(nextBackground, 1500);
+    body.css('background', backgrounds[0]);
+});

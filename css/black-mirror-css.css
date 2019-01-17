@@ -1,0 +1,72 @@
+@font-face{
+font-family:'disney';
+src:url('fonts/BLACK Personal Use.ttf');
+}
+@font-face{
+font-family:'tagline';
+src:url('fonts/Azonix.otf');
+}
+@font-face{
+font-family:'headlineItalic';
+src:url('fonts/Spantaran (DEMO).otf');
+}
+
+body{
+font-family: "Trebuchet MS";
+font-size:15px;
+background:transparent;
+color:white;
+}
+
+#black-mirror{
+	bottom:5%;
+	cursor:pointer;
+  z-index:10000;
+    background: linear-gradient(black,transparent);	
+    overflow:hidden;
+    padding:0;
+    position:fixed;
+    font-size:15px;
+    width:150px;
+	height:50px;
+	font-family:'disney';
+    border-color: black;
+	text-align:center;
+    border-radius: 10px 10px 10px 10px; 
+	transition-timing-function: cubic-bezier(15,15,15,15);
+	transition: height 0.5s;
+}
+.primer{
+margin-left:5%;
+}
+#black-mirror.primer:active, #black-mirror.primer:hover{
+cubic-bezier(15,15,15,15);
+height:200px;
+background:blue;
+}
+
+.matrix{
+margin-left:20%;
+}
+#black-mirror.matrix:active,#black-mirror.matrix:hover{
+cubic-bezier(15,15,15,15);
+height:200px;
+background:blue;
+}
+
+.pi{
+margin-left:35%;
+}
+#black-mirror.pi:active,#black-mirror.pi:hover{
+cubic-bezier(15,15,15,15);
+height:200px;
+background:blue;}
+
+.prestige{
+margin-left:50%;
+}
+#black-mirror.prestige:active,#black-mirror.prestige:hover{
+cubic-bezier(15,15,15,15);
+height:200px;
+background:blue;}
+

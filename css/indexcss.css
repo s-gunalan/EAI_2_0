@@ -1,6 +1,6 @@
 @font-face{
 font-family:'disney';
-src:url('fonts/New Walt Disney.ttf');
+src:url('fonts/BLACK Personal Use.ttf');
 }
 @font-face{
 font-family:'tagline';
@@ -19,6 +19,7 @@ background:url('images/darkSpace.jpg');
 color:white;
 background-repeat: repeat;
 background-size:cover;
+#background-position:-65vw;
 overflow:hidden; 
 }
 small {
@@ -31,7 +32,7 @@ font-size:15px;
 height:10vh;
 text-align:left;
 font-family:'headlineItalic';
-background: linear-gradient(black,black,transparent);	
+background: linear-gradient(black,black,transparent);
 }
 #tagline{
 font-family:'tagline';
@@ -41,6 +42,46 @@ letter-spacing:0;
 height:10vh;
 float:right;
 }
+#logos{
+margin-top:20vh;
+height:10vh;
+margin-left:5vw;
+cursor: pointer;
+border-radius:6px;
+opacity:0.5;
+width:20vw;
+background-repeat:no repeat;
+background-size:5px 5px;
+}
+#logo{
+cursor: pointer;
+border-radius:6px;
+opacity:0.5;
+width:0vw;
+}
+#logo:active, #logo:hover{
+opacity:1;
+}
+#logo.apigee{
+width:7vw;
+}
+#logo.ibm{
+width:7vw;
+}
+#logo.sag{
+width:9vw;
+}
+#logo.tibco{
+width:8vw;
+}
+#black-mirror-frame{
+	z-index:10000;
+	background: linear-gradient(transparent,transparent,transparent,black);	
+	margin-top:5vh;
+	height:70vh;
+	width:70vw;
+}
+
 .text{
     width:100%;display:flex;flex-direction:column;
 color:white;
@@ -49,7 +90,7 @@ color:white;
     width:100%;margin-top:5px;margin-bottom:auto;line-height: 15px;font-size: 15px;
 }
 .text > p:last-of-type{
-    width:100%;text-align:left;color:black;margin-bottom:-7px;margin-top:auto;text-align:right;
+    width:100%;text-align:left;color:black;margin-bottom:-7px;margin-top:auto;t ext-align:right;
 }
 .text-l{
     float:right;padding-right:10px;
@@ -85,27 +126,29 @@ text-align:center;
 }
 .frame{
     z-index:10000;
-    background:transparent;
     overflow:hidden;
     padding:0;
     position:fixed;
     right:60px;
-    bottom:70px;
+    bottom:45px;
     font-size:15px;
-    width:150px;
-    border-color: black;
-    border-radius: 10px 10px 10px 10px;  
-box-shadow: inset 0 5px 10px 0 grey, 0 1px 2px 0 white;	
+	width:100px;
+	border-radius:100px;
+	box-shadow: inset 0 0px 10px 0px grey, 0 1px 2px 0 white;	
+	background-color:linear-gradient(black,transparent,transparent)
 }
 
 .panel-primary {
     background:transparent;
-    height: 50px;
-}
+    
+	}
 .panel-heading{
     cursor: pointer;
-    background-color:transparent;
-	border-color:black;
+    background:url('images/jarvis-4.gif');
+	height: 100px;
+	background-size:200px 200px ;
+	background-repeat:no-repeat;
+	background-position: -50px -50px;
     text-align: center;
 }
 .panel-primary>.panel-heading{
@@ -124,7 +167,7 @@ margin-bottom:0px;
 margin-top:20px;
 z-index:1;
 background:transparent;
-    height:450px;
+height:60vh;
     opacity:'0';
 }
 .innerframe > div:last-of-type{
@@ -140,12 +183,12 @@ display:flex;
     padding:14px;
     position:absolute;
     top:40px;
-    bottom:50px;
+    bottom:40px;
     display:flex;
     flex-direction: column;
     overflow-y:overlay;
-    height: 350px;
-
+    height:52vh;
+	
 }
 .msj:before{
     width: 0;
