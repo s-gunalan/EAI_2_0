@@ -34,6 +34,7 @@ text-align:left;
 font-family:'headlineItalic';
 background: linear-gradient(black,black,transparent);
 z-index:1000000;
+position:fixed;
 }
 #tagline{
 font-family:'tagline';
