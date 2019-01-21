@@ -43,6 +43,8 @@ letter-spacing:0;
 #mindtree-logo{
 height:10vh;
 float:right;
+position:fixed;
+right:0px;
 }
 #logos{
 margin-top:20vh;
