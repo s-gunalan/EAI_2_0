@@ -76,7 +76,7 @@ width:9vw;
 width:8vw;
 }
 #black-mirror-frame{
-	z-index:10000;
+	z-index:-1;
 	background: linear-gradient(transparent,transparent,transparent,black);	
 	margin-top:-15vh;
 	height:100vh;
