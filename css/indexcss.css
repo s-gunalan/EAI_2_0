@@ -80,7 +80,7 @@ width:8vw;
 }
 #black-mirror-frame{
 	background: linear-gradient(transparent,transparent,transparent,black);	
-	margin-top:5vh;
+	margin-top:10vh;
 	height:80vh;
 	width:70vw;
 	border:none;
