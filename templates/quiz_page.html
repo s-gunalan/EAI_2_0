@@ -1,0 +1,22 @@
+<html>
+<body>
+<h1>QUIZ:  {{question_name}} </h1>
+<div id="questions">
+<form action="/results/{{quiz_id}}/{{mailid}}" method='POST'>
+    <ol>
+        {% for i in questions%}
+        <li>{{i['question']}}</li>
+        <input type="radio" name="{{i['question']}}" value = "A">{{i['chA']}}</input>
+        <input type="radio" name="{{i['question']}}" value = "B">{{i['chB']}}</input>
+        {% endfor %}
+        
+    </ol>
+    <input type="submit" value="submit" />
+</form>
+<button id="next">next</button>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+</script>
+<html>
