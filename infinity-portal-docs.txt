@@ -82,6 +82,11 @@ UI:
 
 JARVIS – AJAX Call to Dialogflow (Query)
 
+<br><button class="btn btn-primary" onclick="buttonclick('Add question')">Add question</button>  <button class="btn btn-primary" onclick="buttonclick('Update question')">Update question</button>   <button class="btn btn-primary" onclick="buttonclick('Get questions')">Get questions</button>
+
+<button class="btn btn-primary" onclick="buttonclick('Single')">Single Answer MCQ</button>  <button class="btn btn-primary" onclick="buttonclick('Multiple')">Multiple Answer MCQ</button>  <button class="btn btn-primary" onclick="buttonclick('Boolean')">Boolean</button>  
+
+<br><br><button class="btn btn-primary" onclick="buttonclick('A')">Choice A</button>  <button class="btn btn-primary" onclick="buttonclick('B')">Choice B</button>  <button class="btn btn-primary" onclick="buttonclick('C')">Choice C</button>  <button class="btn btn-primary" onclick="buttonclick('D')">Choice D</button>  
 
 
 

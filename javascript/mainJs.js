@@ -126,13 +126,15 @@ $("#chat-panel").on('click', function() {
 	$(".panel-heading").contents().remove();
     
     } else {
-        framewidth = "350";
+        framewidth = "25vw";
         op = "1";
 	
-	$(".panel-heading").css('height','50px');
-	
-	$(".panel-heading").text('JARVIS');
-    $(".frame").css('border-radius','0px');
+	$(".panel-heading").css('height','100px');
+	$(".panel-heading").css('padding-top','30px');
+	$(".panel-heading").css('padding-left','180px');
+	$(".panel-heading").text('Chat here with JARVIS to access Portal intelligently');
+	$(".panel-heading").css('text-align','right');
+    $(".frame").css('border-radius','5px');
 	}
     $(".innerframe").animate({
         height: 'toggle',
@@ -165,6 +167,10 @@ $(".mytext").on("keyup", function(e) {
      
 });
 
+function buttonclick(text){
+insertChat("local", text);              
+queryBot(text);
+}
 resetChat();
 
 function queryBot(text) {

@@ -1,6 +1,6 @@
 @font-face{
 font-family:'disney';
-src:url('fonts/BLACK Personal Use.ttf');
+src:url('../../css/fonts/BLACK Personal Use.ttf');
 }
 @font-face{
 font-family:'tagline';
@@ -11,8 +11,14 @@ font-family:'headlineItalic';
 src:url('fonts/Spantaran (DEMO).otf');
 }
 
+body{
+font-family: "Trebuchet MS";
+font-size:15px;
+color:white;
+}
+
 #black-mirror{
-	bottom:1%;
+	bottom:5%;
 	cursor:pointer;
   z-index:10000;
     background: linear-gradient(black,transparent);	
@@ -20,9 +26,9 @@ src:url('fonts/Spantaran (DEMO).otf');
     padding:0;
     position:fixed;
     font-size:15px;
-    width:200px;
+    width:150px;
 	height:50px;
-	font-family:'Trebuchet MS';
+	font-family:'disney';
     border-color: black;
 	text-align:center;
     border-radius: 10px 10px 10px 10px; 
@@ -30,7 +36,7 @@ src:url('fonts/Spantaran (DEMO).otf');
 	transition: height 0.5s;
 }
 .primer{
-margin-left:1%;
+margin-left:5%;
 }
 #black-mirror.primer:active, #black-mirror.primer:hover{
 cubic-bezier(15,15,15,15);
@@ -48,7 +54,7 @@ background:blue;
 }
 
 .pi{
-margin-left:45%;
+margin-left:35%;
 }
 #black-mirror.pi:active,#black-mirror.pi:hover{
 cubic-bezier(15,15,15,15);
@@ -56,48 +62,10 @@ height:200px;
 background:blue;}
 
 .prestige{
-margin-left:70%;
+margin-left:50%;
 }
 #black-mirror.prestige:active,#black-mirror.prestige:hover{
 cubic-bezier(15,15,15,15);
 height:200px;
 background:blue;}
 
- body{
-  background:transparent;
-  color:white;
-  font-family:Trebuchet MS
-  }
-  
-  /* Make the image fully responsive */
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
-  .card{
-  cursor:pointer;
-  background:transparent;
-  }
-  .card-body{
-  background:black;
-  }
-  
-::-webkit-scrollbar {
-  width: 3px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: red; 
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-}

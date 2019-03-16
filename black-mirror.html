@@ -1,19 +1,61 @@
-<html>
+<!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/black-mirror-css.css">
-</head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <body bgcolor="transparent">
-<div style="text-align:center">
-<div class="index">
-<div id="black-mirror" class="primer">PRIMER
+
+<div id="demo" class="carousel slide border shadow p-1 mb-1 bg-dark col-5" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.mulesoft.com/sites/default/files/cmm_files/mulesoft-og_0.jpg" alt="Mulesoft">
+    </div>
+    <div class="carousel-item">
+      <img src="https://apigee.com/about/cdn/farfuture/p7qF65l1N66J5ofujYvpsLJHijNyCYf-X4gsS85i2Ok/mtime:1471559714/sites/mktg-new/files/AWSedgeImage.png" alt="apigee">
+    </div>
+    <div class="carousel-item">
+      <img src="https://miro.medium.com/max/870/1*DqEVjw0irF4VC_9s3fuBlQ.png" alt="Tibco">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 </div>
-<div id="black-mirror" class="matrix">MATRIX
-</div><br>
-<div id="black-mirror" class="pi">PI
 </div>
-<div id="black-mirror" class="prestige">PRESTIGE
-</div>
-</div>
+
 </body>
+<style>
+body{
+background:transparent;
+}
+#demo{
+margin-top: 5%;
+margin-left:5%;
+}
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
 <html>
