@@ -216,7 +216,11 @@ function botToBot(action,text) {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {"Authorization": "Bearer " + botToken},
-        data: JSON.stringify({query: text,lang: "en",sessionId: SESSIONID}),
+        data: JSON.stringify({
+            query: text,
+            lang: "en",
+            sessionId: SESSIONID
+        }),
         success: function(data) {
             queryBot(data.result.fulfillment.speech)
             insertChat(bot, data.result.fulfillment.speech);
