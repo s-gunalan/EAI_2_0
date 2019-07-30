@@ -209,7 +209,8 @@ function botToBot(action,fulfillmentText) {
     {
 	var bot = action.split(".")[1];
 	console.log(fulfillmentText);
-	var botToken = eval(bot)
+	var botToken = eval(bot);
+	    alert(fulfillmentText);
         $.ajax({
         type: "POST",
         url: baseUrl + "query?v=20150910",
