@@ -205,7 +205,7 @@ function queryBot(text) {
 }
 
 function botToBot(action,text) {
-    if(!(action.startsWith("contact.")))
+    if(action=="contact.ULTRON")
     {
 		var bot=action.split(".")[1]
 		botToken = window[bot]
