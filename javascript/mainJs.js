@@ -2,7 +2,9 @@ var local = {};
 
 var remote = {};
 var SESSIONID = generateUUID();
-var accessToken = "5e156e4132be4615b948184ce2a56a89";
+var accessToken = "ada8b5ed3597459d9cc0edaa2a033e67";
+var muleBotAccessToken = "6ec8e22772604bbcb3d6e420d0e1edfa";
+var devopsBotAccessToken = "e9e8ba482ba44deb89fcbbb5dccc6dda";
 
 var baseUrl = "https://api.api.ai/v1/";
 var apihost = "";
@@ -90,7 +92,7 @@ function insertChat(who, text) {
             '</div>' +
             '</li>';
     }
-    else if (who =="others") {
+    else if (who =="jarvis") {
         control = '<li style="width:100%;align:right;">' +
             '<div class="msj macro">' +
             '<div class="textdp">' +
@@ -103,7 +105,7 @@ function insertChat(who, text) {
     else {
         control = '<li style="width:100%;align:right;">' +
             '<div class="msj macro">' +
-            '<div class="text text-l">' +
+            '<div class="text text-l">' + who +
             '<p>' + text + '</p>' +
             '<p><small>' + date + '</small></p>' +
             '</div>' +
@@ -114,6 +116,8 @@ function insertChat(who, text) {
     var objDiv = document.getElementById("messages");
     objDiv.scrollTop = objDiv.scrollHeight;
 }
+
+
 
 $("#chat-panel").on('click', function() {
     var framewidth = $("#frame").width();
@@ -132,7 +136,7 @@ $("#chat-panel").on('click', function() {
 	$(".panel-heading").css('height','100px');
 	$(".panel-heading").css('padding-top','30px');
 	$(".panel-heading").css('padding-left','180px');
-	$(".panel-heading").text('Chat here with JARVIS to access Portal intelligently');
+	$(".panel-heading").text('Chat here with JARVIS');
 	$(".panel-heading").css('text-align','right');
     $(".frame").css('border-radius','5px');
 	}
@@ -189,20 +193,40 @@ function queryBot(text) {
         }),
 
         success: function(data) {
-			basepath=data.result.action;
-			url = apihost + basepath;
-			$('#calendar').attr('src', url);
-			document.getElementById('black-mirror-frame').src = url;
-            insertChat("remote", data.result.fulfillment.speech);
+            botToBot(data.result.action,data.result.fulfillment.speech)
+            displayOutput(data.result.fulfillment.displayText);
+            insertChat("jarvis", data.result.fulfillment.speech);
             var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
             window.speechSynthesis.speak(msg);
         },
         error: function() {
-            insertChat("remote", "Sorry Jarvis has faced some issues! Please try again later");
+            insertChat("jarvis", "Sorry Jarvis has faced some issues! Please try again later");
         }
     });
 }
 
+function botToBot(action,text) {
+    if(!(action.startsWith("contact.")))
+    {
+		var bot=action.split(".")[1]
+		botToken = window[bot]
+        $.ajax({
+        type: "POST",
+        url: baseUrl + "query?v=20150910",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {"Authorization": "Bearer " + botToken},
+        data: JSON.stringify({query: text,lang: "en",sessionId: SESSIONID}),
+        success: function(data) {
+            queryBot(data.result.fulfillment.speech)
+            insertChat(bot, data.result.fulfillment.speech);
+			},
+        error: function() {
+            insertChat("Mr Mule", "Sorry Mr Mule Bot has faced some issues! Please try again later");
+            setTimeout('', 2000);
+			}
+		});
+}}
 
 function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();
