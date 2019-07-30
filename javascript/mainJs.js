@@ -3,8 +3,8 @@ var local = {};
 var remote = {};
 var SESSIONID = generateUUID();
 var accessToken = "bb75f2f1492349c686196d714d9dce22";
-var muleBotAccessToken = "6ec8e22772604bbcb3d6e420d0e1edfa";
-var devopsBotAccessToken = "e9e8ba482ba44deb89fcbbb5dccc6dda";
+var Mr_Mule = "6ec8e22772604bbcb3d6e420d0e1edfa";
+var DevOps = "e9e8ba482ba44deb89fcbbb5dccc6dda";
 
 var baseUrl = "https://api.api.ai/v1/";
 var apihost = "";
@@ -205,10 +205,11 @@ function queryBot(text) {
 }
 
 function botToBot(action,text) {
-    if(action=="contact.ULTRON")
+    if(action.startsWith("contact."))
     {
-		var bot=action.split(".")[1]
-		botToken = window[bot]
+	var bot = action.split(".")[1];
+	console.log(bot);
+	var botToken = eval(bot)
         $.ajax({
         type: "POST",
         url: baseUrl + "query?v=20150910",
