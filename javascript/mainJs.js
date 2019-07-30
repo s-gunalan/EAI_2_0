@@ -205,6 +205,7 @@ function queryBot(text) {
 }
 
 function botToBot(action,fulfillmentText) {
+	alert('test');
     if(action.startsWith("contact."))
     {
 	var bot = action.split(".")[1];
