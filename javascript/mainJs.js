@@ -208,7 +208,7 @@ function botToBot(action,text) {
     if(action.startsWith("contact."))
     {
 	var bot = action.split(".")[1];
-	console.log(bot);
+	console.log(text);
 	var botToken = eval(bot)
         $.ajax({
         type: "POST",
