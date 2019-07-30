@@ -105,8 +105,8 @@ function insertChat(who, text) {
     else {
         control = '<li style="width:100%;align:right;">' +
             '<div class="msj macro">' +
-            '<div class="text text-l">' + who +
-            '<p>' + text + '</p>' +
+            '<div class="text text-l">' 
+            '<p><i>' +who +'</i>' + text + '</p>' +
             '<p><small>' + date + '</small></p>' +
             '</div>' +
             '</div>' +
@@ -204,11 +204,11 @@ function queryBot(text) {
     });
 }
 
-function botToBot(action,text) {
+function botToBot(action,fulfillmentText) {
     if(action.startsWith("contact."))
     {
 	var bot = action.split(".")[1];
-	console.log(text);
+	console.log(fulfillmentText);
 	var botToken = eval(bot)
         $.ajax({
         type: "POST",
@@ -217,7 +217,7 @@ function botToBot(action,text) {
         dataType: "json",
         headers: {"Authorization": "Bearer " + botToken},
         data: JSON.stringify({
-            query: text,
+            query: fulfillmentText,
             lang: "en",
             sessionId: SESSIONID
         }),
@@ -227,7 +227,7 @@ function botToBot(action,text) {
 			},
         error: function() {
             insertChat("Mr Mule", "Sorry Mr Mule Bot has faced some issues! Please try again later");
-            setTimeout('', 2000);
+            setTimeout('', 10000);
 			}
 		});
 }}
