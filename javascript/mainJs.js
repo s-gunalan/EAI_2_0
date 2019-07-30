@@ -2,7 +2,7 @@ var local = {};
 
 var remote = {};
 var SESSIONID = generateUUID();
-var accessToken = "ada8b5ed3597459d9cc0edaa2a033e67";
+var accessToken = "bb75f2f1492349c686196d714d9dce22";
 var muleBotAccessToken = "6ec8e22772604bbcb3d6e420d0e1edfa";
 var devopsBotAccessToken = "e9e8ba482ba44deb89fcbbb5dccc6dda";
 
