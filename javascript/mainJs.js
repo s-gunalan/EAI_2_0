@@ -193,8 +193,7 @@ function queryBot(text) {
         }),
 
         success: function(data) {
-            botToBot(data.result.action,data.result.fulfillment.speech)
-            displayOutput(data.result.fulfillment.displayText);
+            botToBot(data.result.action,data.result.fulfillment.speech);
             insertChat("jarvis", data.result.fulfillment.speech);
             var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
             window.speechSynthesis.speak(msg);
