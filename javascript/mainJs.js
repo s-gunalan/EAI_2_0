@@ -205,13 +205,13 @@ function queryBot(text) {
 }
 
 function botToBot(action,fulfillmentText) {
-	alert('test');
+	alert('Love you 3000');
     if(action.startsWith("contact."))
     {
 	var bot = action.split(".")[1];
 	console.log(fulfillmentText);
 	var botToken = eval(bot);
-	    alert(fulfillmentText);
+	    alert(fulfillmentText + ' A');
         $.ajax({
         type: "POST",
         url: baseUrl + "query?v=20150910",
