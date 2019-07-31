@@ -95,8 +95,8 @@ function insertChat(who, text) {
     else if (who =="jarvis") {
         control = '<li style="width:100%;align:right;">' +
             '<div class="msj macro">' +
-            '<div class="textdp">' +
-            '<p class ="macrodp">' + text + '</p>' +
+            '<div class="text">' +
+            '<p style=>' + text + '</p>' +
             '<p><small>' + date + '</small></p>' +
             '</div>' +
             '</div>' +
@@ -205,13 +205,11 @@ function queryBot(text) {
 }
 
 function botToBot(action,fulfillmentText) {
-	alert('Love you 3000' +  action);
     if(action.startsWith("contact."))
     {
 	var bot = action.split(".")[1];
 	console.log(fulfillmentText);
 	var botToken = eval(bot);
-	    alert(fulfillmentText + ' A');
         $.ajax({
         type: "POST",
         url: baseUrl + "query?v=20150910",
@@ -225,7 +223,10 @@ function botToBot(action,fulfillmentText) {
         }),
         success: function(data) {
             queryBot(data.result.fulfillment.speech)
-            insertChat(bot, data.result.fulfillment.speech);
+	    insertChat(bot, data.result.fulfillment.speech);
+	    var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
+	    window.speechSynthesis.speak(msg);
+            
 			},
         error: function() {
             insertChat("Mr Mule", "Sorry Mr Mule Bot has faced some issues! Please try again later");
